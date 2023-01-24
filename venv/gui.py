@@ -7,7 +7,8 @@ sg.theme('LightBrown13')
 clock = sg.Text('',key = 'clock')
 label = sg.Text("Type in a to-do")
 input_box = sg.InputText(tooltip = "Enter todo", key = "todo")
-add_button = sg.Button("Add")
+add_button = sg.Button(size = 1, image_source = "venv/add1.png",
+                        key = "Add")
 
 Listbox = sg.Listbox(values = function.readFile(), key = "todos", 
                     enable_events = True, size = [45,10])
@@ -22,11 +23,13 @@ window = sg.Window('My To-Do App',
                             [label], [input_box, add_button], 
                             [Listbox, edit_button, complete_button],
                             [exit_button]],
-                    font = ('Helvetica', 15))
+                    font = ('Time New Roman', 15))
 
 
 while True:
-    event, values = window.read(timeout = 200)
+    event, values = window.read()
+    print(event)
+    print(values)
     window['clock'].update(value = time.strftime("%b %d, %Y %H:%M:%S"))
     todos = function.readFile()
     match event:
