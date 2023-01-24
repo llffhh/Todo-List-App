@@ -1,6 +1,11 @@
 import module.function as function 
 import PySimpleGUI as sg
 import time
+import os
+
+if not os.path.exists("venv/todos.txt"):
+    with open("venv/todos.txt", "w") as file:
+        pass
 
 sg.theme('LightBrown13')
 
