@@ -1,12 +1,12 @@
 def readFile():
     """Read todo from a todos.txt"""
-    with open('venv/todos.txt','r') as file:
+    with open('todos.txt','r') as file:
         todos = file.readlines()
     return todos
 
 def writeFile(todos):
     """ Write todos list into todos.txt """
-    with open('venv/todos.txt','w') as file:
+    with open('todos.txt','w') as file:
         file.writelines(todos)
 
 def showTodo(todos):
