@@ -3,8 +3,8 @@ import PySimpleGUI as sg
 import time
 import os
 
-if not os.path.exists("venv/todos.txt"):
-    with open("venv/todos.txt", "w") as file:
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
         pass
 
 sg.theme('LightBrown13')
@@ -12,7 +12,7 @@ sg.theme('LightBrown13')
 clock = sg.Text('',key = 'clock')
 label = sg.Text("Type in a to-do")
 input_box = sg.InputText(tooltip = "Enter todo", key = "todo")
-add_button = sg.Button(size = 1, image_source = "venv/add1.png",
+add_button = sg.Button(size = 1, image_source = "add1.png",
                         key = "Add")
 
 Listbox = sg.Listbox(values = function.readFile(), key = "todos", 
